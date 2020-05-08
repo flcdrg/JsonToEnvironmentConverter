@@ -33,6 +33,11 @@ namespace JsonToEnvironmentConverter.Pages
         public void OnGet()
         {
             Environment = string.Empty;
+            Json = @"{
+  ""ConnectionStrings"": {
+    ""DefaultConnection"": ""Database=master;Server=(local);Integrated Security=SSPI;""
+    }
+}";
         }
 
         public async Task<IActionResult> OnPostAsync()
