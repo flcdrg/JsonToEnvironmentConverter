@@ -7,9 +7,9 @@ on:
     branches: [ master ]
 
 env:
-  AZURE_WEBAPP_NAME: JsonToEnvironmentConverter    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '3.1.101'           # set this to the dot net version to use
+  AZURE_WEBAPP_NAME: JsonToEnvironmentConverter
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  DOTNET_VERSION: '3.1.101'
 
 jobs:
   build:
@@ -28,10 +28,11 @@ jobs:
         dotnet build --configuration Release
         dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
 
-    # Deploy to Azure Web apps
+    # Deploy to Azure Web apps (master only)
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with: 
-        app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
+        app-name: ${{ env.AZURE_WEBAPP_NAME }} 
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+      if: contains(github.href, "master")
