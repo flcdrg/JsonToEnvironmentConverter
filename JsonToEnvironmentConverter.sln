@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToEnvironmentConverter", "JsonToEnvironmentConverter\JsonToEnvironmentConverter.csproj", "{EB9DA7F0-ABFD-4EC7-AB5B-19521A44BA72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB9DA7F0-ABFD-4EC7-AB5B-19521A44BA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB9DA7F0-ABFD-4EC7-AB5B-19521A44BA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB9DA7F0-ABFD-4EC7-AB5B-19521A44BA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB9DA7F0-ABFD-4EC7-AB5B-19521A44BA72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A2D7765-6A3B-4579-9704-95FEFF326BA7}
+	EndGlobalSection
+EndGlobal

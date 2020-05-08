@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="text-left">
+    <p>Convert JSON text into Environment variable equivalents. The results would be suitable for setting in a Docker container to set or override 
+        configuration.</p>
+    <p>For example, in .NET Core, the <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables"><code>AddEnvironmentVariables</code></a> extension method
+        adds environment variables to the current configuration.</p>
+    <form method="post">
+
+        <div class="form-group">
+            <label for="Json">JSON</label><br />
+            <textarea asp-for="Json" cols="80" class="text-monospace">
+            </textarea><br />
+            <span asp-validation-for="Json" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Convert" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="Environment">Environment</label><br />
+            <textarea id="Environment" cols="80" class="text-monospace" readonly="readonly">@Model.Environment</textarea>
+        </div>
+    </form>
+    
+    <p><a href="https://david.gardiner.net.au">Built by David Gardiner</a>, source on GitHub</p>
+
+</div>
