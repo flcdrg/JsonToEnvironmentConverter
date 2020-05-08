@@ -11,22 +11,18 @@
 
         <div class="form-group">
             <label for="Json">JSON</label><br />
-            <textarea asp-for="Json" cols="80" class="text-monospace">
-            </textarea><br />
+            <textarea asp-for="Json" cols="80" rows="10" class="text-monospace" onfocus="this.select();"></textarea><br />
             <span asp-validation-for="Json" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <input type="submit" value="Convert" />
         </div>
-
-
+        
         <div class="form-group">
             <label for="Environment">Environment</label><br />
-            <textarea id="Environment" cols="80" class="text-monospace" readonly="readonly">@Model.Environment</textarea>
+            <textarea id="Environment" cols="80" rows="10" class="text-monospace text-nowrap" readonly="readonly" onfocus="this.select();">@Model.Environment</textarea>
         </div>
     </form>
-    
-    <p><a href="https://david.gardiner.net.au">Built by David Gardiner</a>, source on GitHub</p>
 
 </div>
