@@ -31,8 +31,8 @@ jobs:
     # Deploy to Azure Web apps (master only)
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
+      if: contains(github.ref, 'master')
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }} 
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-      if: contains(github.href, "master")
