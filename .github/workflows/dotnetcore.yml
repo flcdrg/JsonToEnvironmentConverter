@@ -10,6 +10,7 @@ env:
   AZURE_WEBAPP_NAME: JsonToEnvironmentConverter
   AZURE_WEBAPP_PACKAGE_PATH: '.'
   DOTNET_VERSION: '3.1.101'
+  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
 
 jobs:
   build:
