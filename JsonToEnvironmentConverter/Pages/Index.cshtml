@@ -16,7 +16,10 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Convert" />
+            <label><input type="radio" name="Format" value="Docker" checked="@(Model.Format != "Yaml")" /> Docker</label>
+            <label><input type="radio" name="Format" value="Yaml" checked="@(Model.Format == "Yaml")"/> Yaml</label><br />
+            <label><input type="checkbox" asp-for="IncludeEmpty" />Include empty values</label>
+            <input type="submit" value="Convert"/>
         </div>
         
         <div class="form-group">

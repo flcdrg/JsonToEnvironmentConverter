@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+﻿using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,10 +22,11 @@ namespace JsonToEnvironmentConverter.Pages
         [Required]
         [BindProperty] public string Json { get; set; }
 
-        public string Environment
-        {
-            get; set;
-        }
+        [BindProperty] public string Format { get; set; } = "Docker";
+
+        [BindProperty] public bool IncludeEmpty { get; set; } = true;
+
+        public string Environment { get; set; }
 
         public void OnGet()
         {
@@ -64,9 +62,21 @@ namespace JsonToEnvironmentConverter.Pages
                     var configurationRoot = builder.Build();
 
                     var sb = new StringBuilder();
-                    foreach ((string key, string value) in configurationRoot.AsEnumerable().OrderBy(pair => pair.Key))
+
+                    string format;
+                    if (Format == "Yaml")
                     {
-                        sb.Append($"{key} = {value}");
+                        format = "\"{0}\": \"{1}\"";
+                    }
+                    else
+                    {
+                        format = "{0} = {1}";
+                    }
+                    foreach ((string key, string value) in configurationRoot.AsEnumerable()
+                        .Where(pair => IncludeEmpty || !string.IsNullOrEmpty(pair.Value))
+                        .OrderBy(pair => pair.Key))
+                    {
+                        sb.AppendFormat(format, key, value);
                         sb.AppendLine();
                     }
 
@@ -80,7 +90,6 @@ namespace JsonToEnvironmentConverter.Pages
             }
 
             return Page();
-            // return RedirectToPage();
         }
     }
 }
