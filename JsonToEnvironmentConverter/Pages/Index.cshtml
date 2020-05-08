@@ -21,7 +21,7 @@
         
         <div class="form-group">
             <label for="Environment">Environment</label><br />
-            <textarea id="Environment" cols="80" rows="10" class="text-monospace text-nowrap" readonly="readonly" onfocus="this.select();">@Model.Environment</textarea>
+            <textarea id="Environment" class="text-monospace" style="white-space: pre; overflow: scroll" cols="80" rows="10" readonly="readonly" onfocus="this.select();">@Html.Raw(Html.Encode(Model.Environment).Replace(System.Environment.NewLine, "<br />"))</textarea>
         </div>
     </form>
 

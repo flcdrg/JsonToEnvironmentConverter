@@ -36,7 +36,8 @@ namespace JsonToEnvironmentConverter.Pages
             Json = @"{
   ""ConnectionStrings"": {
     ""DefaultConnection"": ""Database=master;Server=(local);Integrated Security=SSPI;""
-    }
+    },
+  ""property"": ""value""
 }";
         }
 
@@ -65,14 +66,12 @@ namespace JsonToEnvironmentConverter.Pages
                     var sb = new StringBuilder();
                     foreach ((string key, string value) in configurationRoot.AsEnumerable().OrderBy(pair => pair.Key))
                     {
-                        sb.AppendLine($"{key} = {value}");
+                        sb.Append($"{key} = {value}");
+                        sb.AppendLine();
                     }
 
                     Environment = sb.ToString();
 
-                    ViewData["Environment"] = Environment;
-
-                    Debug.WriteLine(Environment);
                 }
                 catch (System.Text.Json.JsonException e)
                 {
