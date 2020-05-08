@@ -1,3 +1,5 @@
 # JsonToEnvironmentConverter
 
-Web app that provides conversion from JSON to environment
+Web app that converts JSON to equivalent environment variables
+
+Use the app at [https://jsontoenvironmentconverter.azurewebsites.net/](https://jsontoenvironmentconverter.azurewebsites.net/)
