@@ -26,6 +26,8 @@ namespace JsonToEnvironmentConverter.Pages
 
         [BindProperty] public bool IncludeEmpty { get; set; } = true;
 
+        [BindProperty] public string Separator { get; set; } = "Colon";
+
         public string Environment { get; set; }
 
         public void OnGet()
@@ -76,7 +78,12 @@ namespace JsonToEnvironmentConverter.Pages
                         .Where(pair => IncludeEmpty || !string.IsNullOrEmpty(pair.Value))
                         .OrderBy(pair => pair.Key))
                     {
-                        sb.AppendFormat(format, key, value);
+                        string key2 = key;
+                        if (Separator == "Underscore") 
+                        {
+                            key2 = key2.Replace(":", "__");
+                        }
+                        sb.AppendFormat(format, key2, value);
                         sb.AppendLine();
                     }
 

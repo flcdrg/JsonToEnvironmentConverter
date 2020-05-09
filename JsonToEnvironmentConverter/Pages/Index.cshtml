@@ -16,9 +16,21 @@
         </div>
 
         <div class="form-group">
-            <label><input type="radio" name="Format" value="Docker" checked="@(Model.Format != "Yaml")" /> Docker</label>
-            <label><input type="radio" name="Format" value="Yaml" checked="@(Model.Format == "Yaml")"/> Yaml</label><br />
-            <label><input type="checkbox" asp-for="IncludeEmpty" />Include empty values</label>
+            <div class="btn-group" role="group" aria-label="Format choice">
+                <label><input type="radio" name="Format" value="Docker" checked="@(Model.Format != "Yaml")" /> Docker</label>&nbsp;
+                <label><input type="radio" name="Format" value="Yaml" checked="@(Model.Format == "Yaml")"/> Yaml</label><br />
+            </div>
+
+            <label><input type="checkbox" asp-for="IncludeEmpty" /> Include empty values</label>
+            
+            <br />
+
+            <div class="btn-group" role="group" aria-label="Separator characters">
+                <label><input type="radio" name="Separator" value="Colon" checked="@(Model.Separator != "Underscore")" /> Colon (:) </label>&nbsp;
+                <label><input type="radio" name="Separator" value="Underscore" checked="@(Model.Separator == "Underscore")"/> Underscores (__) </label><br />
+            </div>
+
+            <br />
             <input type="submit" value="Convert"/>
         </div>
         
