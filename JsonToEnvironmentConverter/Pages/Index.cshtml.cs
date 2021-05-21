@@ -72,7 +72,7 @@ namespace JsonToEnvironmentConverter.Pages
                     }
                     else
                     {
-                        format = "{0} = {1}";
+                        format = "{0}={1}";
                     }
                     foreach ((string key, string value) in configurationRoot.AsEnumerable()
                         .Where(pair => IncludeEmpty || !string.IsNullOrEmpty(pair.Value))
