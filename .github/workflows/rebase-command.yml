@@ -1,0 +1,21 @@
+name: rebase-command
+on:
+  repository_dispatch:
+    types: [rebase-command]
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/rebase@v1
+        id: rebase
+        with:
+          token: ${{ secrets.PAT_REPO_FULL }}
+          head: ${{ github.event.client_payload.pull_request.head.label }}
+      - name: Add reaction
+        if: steps.rebase.outputs.rebased-count == 1
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.PAT_REPO_FULL }}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray
