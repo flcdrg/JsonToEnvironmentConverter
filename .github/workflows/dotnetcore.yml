@@ -24,12 +24,16 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }} 
-      # Run dotnet build and publish
-    - name: dotnet build and publish
-      run: |
-        dotnet build --configuration Release
-        dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: dotnet restore
+      run: dotnet restore --locked-mode
+
+    - name: dotnet build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: dotnet publish
+      run: dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' --no-restore --no-build
 
     # Deploy to Azure Web apps (master only)
     - name: 'Run Azure webapp deploy action using publish profile credentials'
