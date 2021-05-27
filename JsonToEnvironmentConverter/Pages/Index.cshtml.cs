@@ -28,6 +28,8 @@ namespace JsonToEnvironmentConverter.Pages
 
         [BindProperty] public string Separator { get; set; } = "Colon";
 
+        [BindProperty] public bool Kubernetes { get; set; } = true;
+
         public string Environment { get; set; }
 
         public void OnGet()
@@ -66,9 +68,14 @@ namespace JsonToEnvironmentConverter.Pages
                     var sb = new StringBuilder();
 
                     string format;
-                    if (Format == "Yaml")
+                    if (Format == "Yaml" && Kubernetes == false)
                     {
                         format = "\"{0}\": \"{1}\"";
+                    }
+                    else if (Format == "Yaml" && Kubernetes == true)
+                    { 
+                        format = "- name: \"{0}\"\n" +
+                                 "  value: \"{1}\"";
                     }
                     else
                     {
