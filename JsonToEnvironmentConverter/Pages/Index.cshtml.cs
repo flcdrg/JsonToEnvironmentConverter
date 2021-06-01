@@ -28,7 +28,8 @@ namespace JsonToEnvironmentConverter.Pages
 
         [BindProperty] public string Separator { get; set; } = "Colon";
 
-        [BindProperty] public bool Kubernetes { get; set; }
+        [BindProperty] public string YamlFormat { get; set; } = "DockerCompose";
+
 
         public string Environment { get; set; }
 
@@ -67,23 +68,15 @@ namespace JsonToEnvironmentConverter.Pages
 
                     var sb = new StringBuilder();
 
-                    string format;
-                    if (Format == "Yaml")
+                    string format = Format switch
                     {
-                        if (Kubernetes)
-                        {
-                            format = "- name: \"{0}\"\n" +
-                                     "  value: \"{1}\"";                        
-                        }
-                        else
-                        {
-                            format = "\"{0}\": \"{1}\"";
-                        }
-                    }
-                    else
-                    {
-                        format = "{0}={1}";
-                    }
+                        "Yaml" when YamlFormat == "Kubernetes" => "- name: \"{0}\"\n" + "  value: \"{1}\"",
+                        "Yaml" when YamlFormat == "AzureAppSettings" =>
+                            "{{\r\n    \"name\": \"{0}\",\r\n    \"value\": \"{1}\",\r\n    \"slotSetting\": false\r\n}},",
+                        "Yaml" => "\"{0}\": \"{1}\"",
+                        _ => "{0}={1}"
+                    };
+
                     foreach ((string key, string value) in configurationRoot.AsEnumerable()
                         .Where(pair => IncludeEmpty || !string.IsNullOrEmpty(pair.Value))
                         .OrderBy(pair => pair.Key))
