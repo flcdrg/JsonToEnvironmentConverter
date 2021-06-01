@@ -15,9 +15,9 @@
       },
       "Nerdbank.GitVersioning": {
         "type": "Direct",
-        "requested": "[3.4.194, )",
-        "resolved": "3.4.194",
-        "contentHash": "f4V2lLy9G0BnddqGhfaVa+dKsbu8iCiLiUARHKBo0l899MgJdRjVU2C7e29gHrZWxc2HZkq3aq28OHHK7q0/iQ=="
+        "requested": "[3.4.205, )",
+        "resolved": "3.4.205",
+        "contentHash": "NWUhCkYARhLEO5aJrp+Hrcr7vbiYovdNIbVI77uUEfGfCoZWSiryWb3wux9WEfCI8Uw1s6aQjR5gOO5VWqZKLw=="
       },
       "Microsoft.AspNetCore.Mvc.Razor.Extensions": {
         "type": "Transitive",

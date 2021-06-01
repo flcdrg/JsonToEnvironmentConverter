@@ -16,22 +16,36 @@
         </div>
 
         <div class="form-group">
-            <div class="btn-group" role="group" aria-label="Format choice">
-                <label><input type="radio" name="Format" value="Docker" checked="@(Model.Format != "Yaml")" /> Docker</label>&nbsp;
-                <label><input type="radio" name="Format" value="Yaml" checked="@(Model.Format == "Yaml")"/> Yaml</label><br />
-            </div>
+            <fieldset class="form-check" role="group" aria-label="Format choice">
+                <legend>Format</legend>
 
-            <label><input type="checkbox" asp-for="IncludeEmpty" /> Include empty values</label>
-            <label><input type="checkbox" asp-for="Kubernetes" /> Kubernetes</label>
+                <label><input type="radio" name="Format" value="Docker" checked="@(Model.Format != "Yaml")"/> Docker</label>&nbsp;
+                <label><input type="radio" name="Format" value="Yaml" checked="@(Model.Format == "Yaml")"/> Yaml</label><br/>
+            </fieldset>
             
-            <br />
+            <fieldset id="yaml-subformat" class="form-check" role="group">
+                <legend>Yaml Subformat</legend>
 
-            <div class="btn-group" role="group" aria-label="Separator characters">
-                <label><input type="radio" name="Separator" value="Colon" checked="@(Model.Separator != "Underscore")" /> Colon (:) </label>&nbsp;
-                <label><input type="radio" name="Separator" value="Underscore" checked="@(Model.Separator == "Underscore")"/> Underscores (__) </label><br />
-            </div>
+                <label>@Html.RadioButtonFor(model => model.YamlFormat, "DockerCompose") Docker Compose</label>
+                <label>@Html.RadioButtonFor(model => model.YamlFormat, "Kubernetes") Kubernetes</label>
+                <label>@Html.RadioButtonFor(model => model.YamlFormat, "AzureAppSettings") Azure App Settings (JSON)</label>
+            </fieldset>
 
-            <br />
+            <fieldset class="form-check">
+                <legend>Separator</legend>
+
+                <div class="btn-group" role="group" aria-label="Separator characters">
+                    <label><input type="radio" name="Separator" value="Colon" checked="@(Model.Separator != "Underscore")"/> Colon (:) </label>&nbsp;
+                    <label><input type="radio" name="Separator" value="Underscore" checked="@(Model.Separator == "Underscore")"/> Underscores (__) </label><br/>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-check">
+                <legend>Other options</legend>
+                <label><input type="checkbox" asp-for="IncludeEmpty"/> Include empty values</label>
+            </fieldset>
+
             <input type="submit" value="Convert"/>
         </div>
         
