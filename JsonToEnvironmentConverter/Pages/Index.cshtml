@@ -28,7 +28,7 @@
 
                 <label>@Html.RadioButtonFor(model => model.YamlFormat, "DockerCompose") Docker Compose</label>
                 <label>@Html.RadioButtonFor(model => model.YamlFormat, "Kubernetes") Kubernetes</label>
-                <label>@Html.RadioButtonFor(model => model.YamlFormat, "AzureAppSettings") Azure App Settings (JSON)</label>
+                <label>@Html.RadioButtonFor(model => model.YamlFormat, "AzureAppSettings", new { @onclick="document.getElementById('Separator:Underscore').checked = true;"}) Azure App Settings (JSON)</label>
             </fieldset>
 
             <fieldset class="form-check">
@@ -36,7 +36,7 @@
 
                 <div class="btn-group" role="group" aria-label="Separator characters">
                     <label><input type="radio" name="Separator" value="Colon" checked="@(Model.Separator != "Underscore")"/> Colon (:) </label>&nbsp;
-                    <label><input type="radio" name="Separator" value="Underscore" checked="@(Model.Separator == "Underscore")"/> Underscores (__) </label><br/>
+                    <label><input type="radio" name="Separator" value="Underscore" id="Separator:Underscore" checked="@(Model.Separator == "Underscore")"/> Underscores (__) </label><br/>
                 </div>
 
             </fieldset>
