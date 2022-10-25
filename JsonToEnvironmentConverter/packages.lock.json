@@ -5,33 +5,33 @@
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
         "type": "Direct",
         "requested": "[3.1.*, 3.2.0)",
-        "resolved": "3.1.29",
-        "contentHash": "13UPmj+SyYEBKmqaGYJVejldU58k9Din4m+2n/DziVREXS75Q8STY27x4dvIbg5O0J7ghaSVNEqwnXiYRpwPEA==",
+        "resolved": "3.1.30",
+        "contentHash": "tbnU/NidXFBhiFUv8uwFf2/s0c6mOHwBB4sAGtJfWK4Cb58f+gd3hsdqSOhMID4VTaThKccXzz0rdf19pnVFlQ==",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "3.1.29",
-          "Microsoft.CodeAnalysis.Razor": "3.1.29",
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "3.1.30",
+          "Microsoft.CodeAnalysis.Razor": "3.1.30",
           "Microsoft.Extensions.DependencyModel": "3.1.25"
         }
       },
       "Nerdbank.GitVersioning": {
         "type": "Direct",
-        "requested": "[3.5.113, )",
-        "resolved": "3.5.113",
-        "contentHash": "4fBSMkqhi410qlkjPm+Mxfk8iO3C7dmgdVS7ljsfVO21WEzZCHP1VCOqB6rlOPfPidR/oxX+/Do/I7meCAz+Jg=="
+        "requested": "[3.5.119, )",
+        "resolved": "3.5.119",
+        "contentHash": "x8k4zV6YKZA5Rr810439lG9NngdbyPtFv0QpIYz32m1Im59kvSbEHO8gKGZoNvsfZSquayjEDUCa8acbut372g=="
       },
       "Microsoft.AspNetCore.Mvc.Razor.Extensions": {
         "type": "Transitive",
-        "resolved": "3.1.29",
-        "contentHash": "3/t+4VTTVLDhakK31+5Y2VKbRkgmhXprcOFQ9H1a1yPWuR92GoAbiOI9PPb20VxrJc/XmLxTnW99EVSJNkd0tw==",
+        "resolved": "3.1.30",
+        "contentHash": "lB7sg+/p8dNjSVSCMU+xjZXV+5bPVCxVFdtPe1e92XK+S+injlkumBjnbm1gmazEtToYW0/guPbGg1rYbzwXWA==",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "3.1.29",
-          "Microsoft.CodeAnalysis.Razor": "3.1.29"
+          "Microsoft.AspNetCore.Razor.Language": "3.1.30",
+          "Microsoft.CodeAnalysis.Razor": "3.1.30"
         }
       },
       "Microsoft.AspNetCore.Razor.Language": {
         "type": "Transitive",
-        "resolved": "3.1.29",
-        "contentHash": "GrnnIR0jDeggIM2yEi7rL1mXWAmcUeTV0+mPf1GpdTZfRrowWie+UffdQ28XGh7PV9t31KKPRYN0VJ3jYWwICA=="
+        "resolved": "3.1.30",
+        "contentHash": "plDGEav/Ak5tMxHJC8/Y3NxL1qu16UBlfz8QiT3+NHUkYKariEG1qQQb2vzYg5P+6FqPzRBi48QHq5u3LSxFVg=="
       },
       "Microsoft.CodeAnalysis.Analyzers": {
         "type": "Transitive",
@@ -62,10 +62,10 @@
       },
       "Microsoft.CodeAnalysis.Razor": {
         "type": "Transitive",
-        "resolved": "3.1.29",
-        "contentHash": "nI64aX3VdOAl3zF6RHLz5i05JEoxq0X8m5rUeaqspOi0cjoDHcuGbi3P27G+cw1Fp+UB3+0eKCyzGueT0JnfGA==",
+        "resolved": "3.1.30",
+        "contentHash": "Ip/QSy29Uth9UR15yJV4y0vST6MavoeBMwEaVHB+2iN1rV1/6TsUZ0jg1xshaGIYkxKia2dFozBaMXHjNwPWkQ==",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "3.1.29",
+          "Microsoft.AspNetCore.Razor.Language": "3.1.30",
           "Microsoft.CodeAnalysis.CSharp": "3.3.0",
           "Microsoft.CodeAnalysis.Common": "3.3.0"
         }
