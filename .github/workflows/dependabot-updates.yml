@@ -53,7 +53,7 @@ jobs:
         run: |
           dotnet restore --force-evaluate
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update lockfiles
 
