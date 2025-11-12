@@ -4,9 +4,9 @@
     "net8.0": {
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
         "type": "Direct",
-        "requested": "[8.0.21, 8.1.0)",
-        "resolved": "8.0.21",
-        "contentHash": "dOex5b7ST8bpC+nPBI6SnSWPSKBzoB/Sd5eo+sd4Zt3Awg7YQkTASMqYRrUD0OrF08q/JGPQPt/kb+swf6yntA==",
+        "requested": "[8.0.22, 8.1.0)",
+        "resolved": "8.0.22",
+        "contentHash": "wF+7bbXqxyE6o2Zb3I68ixwDwbtT23zPYCqVe/Kwr5APzwP415++zoBETjNk5+f9GUp8CaNFL5Uh077tPJmJPg==",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.0",
           "Microsoft.CodeAnalysis.Razor": "6.0.0",
